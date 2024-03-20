@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace proiectPAW {
     public class Utilizator {
@@ -38,6 +34,10 @@ namespace proiectPAW {
         public string CNP {
             get { return cnp; }
             set { cnp = value; }
+        }
+        public DateTime DataNastere {
+            get { return DataNastere; }
+            set { dataNastere = value; }
         }
     }
 }

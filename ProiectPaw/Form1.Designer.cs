@@ -1,5 +1,5 @@
 ﻿namespace ProiectPaw {
-    partial class Form1 {
+    partial class FormMain {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,10 +23,17 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(1675, 785);
+            this.Name = "FormMain";
+            this.Text = "FormMain";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
