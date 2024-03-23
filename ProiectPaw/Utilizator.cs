@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace proiectPAW {
+namespace ProiectPaw {
     public class Utilizator {
         private string nume;
         private string email;
@@ -9,11 +9,12 @@ namespace proiectPAW {
         private DateTime dataNastere;
 
         public Utilizator() { }
-        public Utilizator(string nume, string email, string password, string cnp) {
+        public Utilizator(string nume, string email, string password, string cnp, DateTime dataNastere) {
             this.nume = nume;
             this.email = email;
             this.password = password;
             this.cnp = cnp;
+            this.dataNastere = dataNastere;
         }
 
         public string Nume {
@@ -36,7 +37,7 @@ namespace proiectPAW {
             set { cnp = value; }
         }
         public DateTime DataNastere {
-            get { return DataNastere; }
+            get { return dataNastere; }
             set { dataNastere = value; }
         }
     }

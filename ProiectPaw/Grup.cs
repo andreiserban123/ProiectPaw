@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace proiectPAW {
+namespace ProiectPaw {
     public class Grup {
         private string nume;
         private List<string> drepturi;
@@ -28,7 +28,7 @@ namespace proiectPAW {
         public List<Utilizator> GetListaUtilizatori() {
             List<Utilizator> copieUtilizatori = new List<Utilizator>();
             foreach (Utilizator utilizator in listaUtilizatori) {
-                copieUtilizatori.Add(new Utilizator(utilizator.Nume, utilizator.Email, utilizator.Password, utilizator.CNP));
+                copieUtilizatori.Add(new Utilizator(utilizator.Nume, utilizator.Email, utilizator.Password, utilizator.CNP, utilizator.DataNastere));
             }
             return copieUtilizatori;
         }
@@ -36,7 +36,7 @@ namespace proiectPAW {
         public void SetListaUtilizatori(List<Utilizator> listaUtilizatori) {
             this.listaUtilizatori = new List<Utilizator>();
             foreach (Utilizator utilizator in listaUtilizatori) {
-                this.listaUtilizatori.Add(new Utilizator(utilizator.Nume, utilizator.Email, utilizator.Password, utilizator.CNP));
+                this.listaUtilizatori.Add(new Utilizator(utilizator.Nume, utilizator.Email, utilizator.Password, utilizator.CNP, utilizator.DataNastere));
             }
         }
     }
