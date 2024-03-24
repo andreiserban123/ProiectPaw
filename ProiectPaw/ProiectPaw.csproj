@@ -52,6 +52,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUtilizator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUtilizator.Designer.cs">
+      <DependentUpon>FormUtilizator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Grup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +65,9 @@
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUtilizator.resx">
+      <DependentUpon>FormUtilizator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -21,8 +21,45 @@ namespace ProiectPaw {
             if (lvUtilizatori.SelectedItems.Count > 0) {
                 tbSelectedUtilizator.Text = "";
                 ListViewItem lv = lvUtilizatori.SelectedItems[0];
-                tbSelectedUtilizator.Text += lv.Text + " " + lv.SubItems[1].Text + " " + lv.SubItems[2].Text +
-                    " " + lv.SubItems[3].Text + " " + lv.SubItems[4].Text;
+                tbSelectedUtilizator.Text += lv.Text + "," + lv.SubItems[1].Text + "," + lv.SubItems[2].Text +
+                    "," + lv.SubItems[3].Text + "," + lv.SubItems[4].Text;
+            }
+        }
+
+        private void adaugaToolStripMenuItem_Click(object sender, System.EventArgs e) {
+            Utilizator u = null;
+            FormUtilizator form = new FormUtilizator(u);
+            if (form.ShowDialog() == DialogResult.OK) {
+                u = form.uFormUtilizator;
+                ListViewItem lvItem = new ListViewItem(u.Nume);
+                lvItem.SubItems.Add(u.CNP);
+                lvItem.SubItems.Add(u.Email);
+                lvItem.SubItems.Add(u.Password);
+                lvItem.SubItems.Add(u.DataNastere.ToString());
+                lvItem.Tag = u;
+                lvUtilizatori.Items.Add(lvItem);
+            }
+        }
+
+        private void modificaToolStripMenuItem_Click(object sender, System.EventArgs e) {
+            if (lvUtilizatori.SelectedItems.Count > 0) {
+                ListViewItem lv = lvUtilizatori.SelectedItems[0];
+                Utilizator u = (Utilizator)lv.Tag;
+                FormUtilizator form = new FormUtilizator(u);
+                if (form.ShowDialog() == DialogResult.OK) {
+                    lv.Text = u.Nume;
+                    lv.SubItems[1].Text = u.CNP;
+                    lv.SubItems[2].Text = u.Email;
+                    lv.SubItems[3].Text = u.Password;
+                    lv.SubItems[4].Text = u.DataNastere.ToString();
+                }
+            }
+        }
+
+        private void stergeToolStripMenuItem_Click(object sender, System.EventArgs e) {
+            if (lvUtilizatori.SelectedItems.Count > 0) {
+                if (MessageBox.Show("Sigur doriti sa stergeti utilizatorul?", "Stergere", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    lvUtilizatori.Items.Remove(lvUtilizatori.SelectedItems[0]);
             }
         }
     }
