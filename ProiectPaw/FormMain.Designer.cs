@@ -38,6 +38,9 @@
             this.despreAplicatieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbSelectedUtilizator = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.lvGrupuri = new System.Windows.Forms.ListView();
+            this.chGrupuri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDrepturi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.meniulAplicatiei.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +54,7 @@
             this.chData});
             this.lvUtilizatori.FullRowSelect = true;
             this.lvUtilizatori.HideSelection = false;
-            this.lvUtilizatori.Location = new System.Drawing.Point(360, 156);
+            this.lvUtilizatori.Location = new System.Drawing.Point(285, 127);
             this.lvUtilizatori.Name = "lvUtilizatori";
             this.lvUtilizatori.Size = new System.Drawing.Size(786, 309);
             this.lvUtilizatori.TabIndex = 0;
@@ -86,7 +89,6 @@
             // 
             // meniulAplicatiei
             // 
-            this.meniulAplicatiei.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.meniulAplicatiei.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.meniulAplicatiei.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fisiereToolStripMenuItem,
@@ -117,21 +119,21 @@
             // adaugaToolStripMenuItem
             // 
             this.adaugaToolStripMenuItem.Name = "adaugaToolStripMenuItem";
-            this.adaugaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.adaugaToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
             this.adaugaToolStripMenuItem.Text = "adauga";
             this.adaugaToolStripMenuItem.Click += new System.EventHandler(this.adaugaToolStripMenuItem_Click);
             // 
             // modificaToolStripMenuItem
             // 
             this.modificaToolStripMenuItem.Name = "modificaToolStripMenuItem";
-            this.modificaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.modificaToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
             this.modificaToolStripMenuItem.Text = "modifica";
             this.modificaToolStripMenuItem.Click += new System.EventHandler(this.modificaToolStripMenuItem_Click);
             // 
             // stergeToolStripMenuItem
             // 
             this.stergeToolStripMenuItem.Name = "stergeToolStripMenuItem";
-            this.stergeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.stergeToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
             this.stergeToolStripMenuItem.Text = "sterge";
             this.stergeToolStripMenuItem.Click += new System.EventHandler(this.stergeToolStripMenuItem_Click);
             // 
@@ -143,16 +145,38 @@
             // 
             // tbSelectedUtilizator
             // 
-            this.tbSelectedUtilizator.Location = new System.Drawing.Point(360, 592);
+            this.tbSelectedUtilizator.Location = new System.Drawing.Point(285, 586);
             this.tbSelectedUtilizator.Name = "tbSelectedUtilizator";
             this.tbSelectedUtilizator.Size = new System.Drawing.Size(786, 26);
             this.tbSelectedUtilizator.TabIndex = 2;
+            // 
+            // lvGrupuri
+            // 
+            this.lvGrupuri.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chGrupuri,
+            this.chDrepturi});
+            this.lvGrupuri.HideSelection = false;
+            this.lvGrupuri.Location = new System.Drawing.Point(1218, 127);
+            this.lvGrupuri.Name = "lvGrupuri";
+            this.lvGrupuri.Size = new System.Drawing.Size(310, 213);
+            this.lvGrupuri.TabIndex = 3;
+            this.lvGrupuri.UseCompatibleStateImageBehavior = false;
+            this.lvGrupuri.View = System.Windows.Forms.View.Details;
+            // 
+            // chGrupuri
+            // 
+            this.chGrupuri.Text = "Grup";
+            // 
+            // chDrepturi
+            // 
+            this.chDrepturi.Text = "Drepturi";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1675, 785);
+            this.Controls.Add(this.lvGrupuri);
             this.Controls.Add(this.tbSelectedUtilizator);
             this.Controls.Add(this.lvUtilizatori);
             this.Controls.Add(this.meniulAplicatiei);
@@ -182,6 +206,9 @@
         private System.Windows.Forms.ColumnHeader chEmail;
         private System.Windows.Forms.ColumnHeader chPassword;
         private System.Windows.Forms.ColumnHeader chData;
+        private System.Windows.Forms.ListView lvGrupuri;
+        private System.Windows.Forms.ColumnHeader chGrupuri;
+        private System.Windows.Forms.ColumnHeader chDrepturi;
     }
 }
 
