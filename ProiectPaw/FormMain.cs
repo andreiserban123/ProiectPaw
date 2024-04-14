@@ -175,9 +175,7 @@ namespace ProiectPaw {
             }
         }
 
-        private void tvGrupuri_DragEnter(object sender, DragEventArgs e) {
 
-        }
 
         private void tvGrupuri_DragDrop(object sender, DragEventArgs e) {
             if (!e.Data.GetDataPresent(typeof(Utilizator))) return;
@@ -294,5 +292,7 @@ namespace ProiectPaw {
         private void stergeToolStripMenuItem1_Click(object sender, EventArgs e) {
             stergeToolStripMenuItem_Click(sender, e);
         }
+
+
     }
 }

@@ -30,6 +30,10 @@
             this.chEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chPassword = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chData = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuAplicatie = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.adaugaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.stergeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.meniulAplicatiei = new System.Windows.Forms.MenuStrip();
             this.fisiereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvareBinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,12 +49,8 @@
             this.chGrupuri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDrepturi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tvGrupuri = new System.Windows.Forms.TreeView();
-            this.contextMenuAplicatie = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.adaugaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.stergeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.meniulAplicatiei.SuspendLayout();
             this.contextMenuAplicatie.SuspendLayout();
+            this.meniulAplicatiei.SuspendLayout();
             this.SuspendLayout();
             // 
             // lvUtilizatori
@@ -99,9 +99,40 @@
             this.chData.Text = "DataNastere";
             this.chData.Width = 150;
             // 
+            // contextMenuAplicatie
+            // 
+            this.contextMenuAplicatie.ImageScalingSize = new System.Drawing.Size(28, 28);
+            this.contextMenuAplicatie.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adaugaToolStripMenuItem1,
+            this.modificaToolStripMenuItem1,
+            this.stergeToolStripMenuItem1});
+            this.contextMenuAplicatie.Name = "contextMenuAplicatie";
+            this.contextMenuAplicatie.Size = new System.Drawing.Size(168, 112);
+            this.contextMenuAplicatie.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuAplicatie_Opening);
+            // 
+            // adaugaToolStripMenuItem1
+            // 
+            this.adaugaToolStripMenuItem1.Name = "adaugaToolStripMenuItem1";
+            this.adaugaToolStripMenuItem1.Size = new System.Drawing.Size(167, 36);
+            this.adaugaToolStripMenuItem1.Text = "Adauga";
+            this.adaugaToolStripMenuItem1.Click += new System.EventHandler(this.adaugaToolStripMenuItem1_Click);
+            // 
+            // modificaToolStripMenuItem1
+            // 
+            this.modificaToolStripMenuItem1.Name = "modificaToolStripMenuItem1";
+            this.modificaToolStripMenuItem1.Size = new System.Drawing.Size(167, 36);
+            this.modificaToolStripMenuItem1.Text = "Modifica";
+            this.modificaToolStripMenuItem1.Click += new System.EventHandler(this.modificaToolStripMenuItem1_Click);
+            // 
+            // stergeToolStripMenuItem1
+            // 
+            this.stergeToolStripMenuItem1.Name = "stergeToolStripMenuItem1";
+            this.stergeToolStripMenuItem1.Size = new System.Drawing.Size(167, 36);
+            this.stergeToolStripMenuItem1.Text = "Sterge";
+            this.stergeToolStripMenuItem1.Click += new System.EventHandler(this.stergeToolStripMenuItem1_Click);
+            // 
             // meniulAplicatiei
             // 
-            this.meniulAplicatiei.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.meniulAplicatiei.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.meniulAplicatiei.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fisiereToolStripMenuItem,
@@ -126,21 +157,21 @@
             // salvareBinarToolStripMenuItem
             // 
             this.salvareBinarToolStripMenuItem.Name = "salvareBinarToolStripMenuItem";
-            this.salvareBinarToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.salvareBinarToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
             this.salvareBinarToolStripMenuItem.Text = "Salvare binar";
             this.salvareBinarToolStripMenuItem.Click += new System.EventHandler(this.salvareBinarToolStripMenuItem_Click);
             // 
             // restaurareBinarToolStripMenuItem
             // 
             this.restaurareBinarToolStripMenuItem.Name = "restaurareBinarToolStripMenuItem";
-            this.restaurareBinarToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.restaurareBinarToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
             this.restaurareBinarToolStripMenuItem.Text = "Restaurare binar";
             this.restaurareBinarToolStripMenuItem.Click += new System.EventHandler(this.restaurareBinarToolStripMenuItem_Click);
             // 
             // iesireToolStripMenuItem
             // 
             this.iesireToolStripMenuItem.Name = "iesireToolStripMenuItem";
-            this.iesireToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.iesireToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
             this.iesireToolStripMenuItem.Text = "Iesire";
             // 
             // utilizatoriToolStripMenuItem
@@ -216,42 +247,10 @@
             this.tvGrupuri.LabelEdit = true;
             this.tvGrupuri.Location = new System.Drawing.Point(285, 553);
             this.tvGrupuri.Name = "tvGrupuri";
-            this.tvGrupuri.Size = new System.Drawing.Size(480, 206);
+            this.tvGrupuri.Size = new System.Drawing.Size(661, 206);
             this.tvGrupuri.TabIndex = 4;
             this.tvGrupuri.DragDrop += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragDrop);
             this.tvGrupuri.DragOver += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragOver);
-            // 
-            // contextMenuAplicatie
-            // 
-            this.contextMenuAplicatie.ImageScalingSize = new System.Drawing.Size(28, 28);
-            this.contextMenuAplicatie.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adaugaToolStripMenuItem1,
-            this.modificaToolStripMenuItem1,
-            this.stergeToolStripMenuItem1});
-            this.contextMenuAplicatie.Name = "contextMenuAplicatie";
-            this.contextMenuAplicatie.Size = new System.Drawing.Size(168, 112);
-            this.contextMenuAplicatie.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuAplicatie_Opening);
-            // 
-            // adaugaToolStripMenuItem1
-            // 
-            this.adaugaToolStripMenuItem1.Name = "adaugaToolStripMenuItem1";
-            this.adaugaToolStripMenuItem1.Size = new System.Drawing.Size(270, 36);
-            this.adaugaToolStripMenuItem1.Text = "Adauga";
-            this.adaugaToolStripMenuItem1.Click += new System.EventHandler(this.adaugaToolStripMenuItem1_Click);
-            // 
-            // modificaToolStripMenuItem1
-            // 
-            this.modificaToolStripMenuItem1.Name = "modificaToolStripMenuItem1";
-            this.modificaToolStripMenuItem1.Size = new System.Drawing.Size(270, 36);
-            this.modificaToolStripMenuItem1.Text = "Modifica";
-            this.modificaToolStripMenuItem1.Click += new System.EventHandler(this.modificaToolStripMenuItem1_Click);
-            // 
-            // stergeToolStripMenuItem1
-            // 
-            this.stergeToolStripMenuItem1.Name = "stergeToolStripMenuItem1";
-            this.stergeToolStripMenuItem1.Size = new System.Drawing.Size(270, 36);
-            this.stergeToolStripMenuItem1.Text = "Sterge";
-            this.stergeToolStripMenuItem1.Click += new System.EventHandler(this.stergeToolStripMenuItem1_Click);
             // 
             // FormMain
             // 
@@ -265,9 +264,9 @@
             this.Controls.Add(this.meniulAplicatiei);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.contextMenuAplicatie.ResumeLayout(false);
             this.meniulAplicatiei.ResumeLayout(false);
             this.meniulAplicatiei.PerformLayout();
-            this.contextMenuAplicatie.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
