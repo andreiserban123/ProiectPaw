@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
@@ -37,6 +38,7 @@ namespace ProiectPaw {
             lvItem.SubItems.Add(u1.DataNastere.ToString());
             lvItem.Tag = u1;
             lvUtilizatori.Items.Add(lvItem);
+
         }
 
         private void lvUtilizatori_SelectedIndexChanged(object sender, EventArgs e) {
@@ -190,5 +192,84 @@ namespace ProiectPaw {
 
             }
         }
+
+        private void tvGrupuri_DragEnter(object sender, DragEventArgs e) {
+
+        }
+
+        private void tvGrupuri_DragDrop(object sender, DragEventArgs e) {
+            if (!e.Data.GetDataPresent(typeof(Utilizator))) return;
+
+            Point dropPoint = tvGrupuri.PointToClient(new Point(e.X, e.Y));
+            TreeNode targetNode = tvGrupuri.GetNodeAt(dropPoint);
+            Utilizator draggedUser = (Utilizator)e.Data.GetData(typeof(Utilizator));
+
+            if (targetNode != null) {
+                Grup targetGrup = targetNode.Tag as Grup;
+                if (targetGrup == null && targetNode.Parent != null) {
+                    targetGrup = targetNode.Parent.Tag as Grup;
+                }
+
+                if (targetGrup != null && !targetGrup.listaUtilizatori.Contains(draggedUser)) {
+                    targetGrup.listaUtilizatori.Add(draggedUser);
+                    TreeNode newUserNode = new TreeNode(draggedUser.Nume) { Tag = draggedUser };
+                    targetNode.Nodes.Add(newUserNode);
+                    targetNode.Expand();
+                }
+            }
+            else {
+                Grup userGrup = FindGrupByUtilizator(grupuri, draggedUser);
+                if (userGrup != null) {
+                    TreeNode groupNode = FindTreeNodeByTag(tvGrupuri.Nodes, userGrup);
+                    if (groupNode == null) {
+                        groupNode = new TreeNode(userGrup.Nume) { Tag = userGrup };
+                        tvGrupuri.Nodes.Add(groupNode);
+                    }
+                    if (FindTreeNodeByTag(groupNode.Nodes, draggedUser) == null) {
+                        TreeNode newUserNode = new TreeNode(draggedUser.Nume) { Tag = draggedUser };
+                        groupNode.Nodes.Add(newUserNode);
+                        groupNode.Expand();
+                    }
+                }
+            }
+
+        }
+        private TreeNode FindTreeNodeByTag(TreeNodeCollection nodes, object tag) {
+            foreach (TreeNode node in nodes) {
+                if (node.Tag == tag) {
+                    return node;
+                }
+                if (node.Nodes.Count > 0) {
+                    TreeNode foundNode = FindTreeNodeByTag(node.Nodes, tag);
+                    if (foundNode != null) return foundNode;
+                }
+            }
+            return null;
+        }
+
+        private Grup FindGrupByUtilizator(List<Grup> grupuri, Utilizator utilizator) {
+            foreach (Grup grup in grupuri) {
+                if (grup.listaUtilizatori.Contains(utilizator)) {
+                    return grup;
+                }
+            }
+            return null;
+        }
+
+        private void lvUtilizatori_MouseDown(object sender, MouseEventArgs e) {
+            if (lvUtilizatori.SelectedItems.Count > 0) {
+                lvUtilizatori.DoDragDrop((Utilizator)lvUtilizatori.SelectedItems[0].Tag,
+                    DragDropEffects.Copy);
+            }
+        }
+
+        private void tvGrupuri_DragOver(object sender, DragEventArgs e) {
+            e.Effect = DragDropEffects.None;
+
+            if (e.Data.GetDataPresent(typeof(Utilizator))) {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
     }
 }

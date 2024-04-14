@@ -43,6 +43,7 @@
             this.lvGrupuri = new System.Windows.Forms.ListView();
             this.chGrupuri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDrepturi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tvGrupuri = new System.Windows.Forms.TreeView();
             this.meniulAplicatiei.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,7 @@
             this.lvUtilizatori.UseCompatibleStateImageBehavior = false;
             this.lvUtilizatori.View = System.Windows.Forms.View.Details;
             this.lvUtilizatori.SelectedIndexChanged += new System.EventHandler(this.lvUtilizatori_SelectedIndexChanged);
+            this.lvUtilizatori.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvUtilizatori_MouseDown);
             // 
             // chNume
             // 
@@ -99,7 +101,7 @@
             this.despreAplicatieToolStripMenuItem});
             this.meniulAplicatiei.Location = new System.Drawing.Point(0, 0);
             this.meniulAplicatiei.Name = "meniulAplicatiei";
-            this.meniulAplicatiei.Size = new System.Drawing.Size(1675, 38);
+            this.meniulAplicatiei.Size = new System.Drawing.Size(1675, 42);
             this.meniulAplicatiei.TabIndex = 1;
             this.meniulAplicatiei.Text = "menuStrip1";
             // 
@@ -172,7 +174,7 @@
             // 
             // tbSelectedUtilizator
             // 
-            this.tbSelectedUtilizator.Location = new System.Drawing.Point(285, 586);
+            this.tbSelectedUtilizator.Location = new System.Drawing.Point(285, 497);
             this.tbSelectedUtilizator.Name = "tbSelectedUtilizator";
             this.tbSelectedUtilizator.Size = new System.Drawing.Size(786, 26);
             this.tbSelectedUtilizator.TabIndex = 2;
@@ -200,11 +202,23 @@
             this.chDrepturi.Text = "Drepturi";
             this.chDrepturi.Width = 100;
             // 
+            // tvGrupuri
+            // 
+            this.tvGrupuri.AllowDrop = true;
+            this.tvGrupuri.LabelEdit = true;
+            this.tvGrupuri.Location = new System.Drawing.Point(285, 553);
+            this.tvGrupuri.Name = "tvGrupuri";
+            this.tvGrupuri.Size = new System.Drawing.Size(480, 206);
+            this.tvGrupuri.TabIndex = 4;
+            this.tvGrupuri.DragDrop += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragDrop);
+            this.tvGrupuri.DragOver += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragOver);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1675, 785);
+            this.Controls.Add(this.tvGrupuri);
             this.Controls.Add(this.lvGrupuri);
             this.Controls.Add(this.tbSelectedUtilizator);
             this.Controls.Add(this.lvUtilizatori);
@@ -240,6 +254,7 @@
         private System.Windows.Forms.ToolStripMenuItem adaugaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem restaurareBinarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iesireToolStripMenuItem;
+        private System.Windows.Forms.TreeView tvGrupuri;
     }
 }
 
