@@ -45,8 +45,7 @@ namespace ProiectPaw {
             if (lvUtilizatori.SelectedItems.Count > 0) {
                 tbSelectedUtilizator.Text = "";
                 ListViewItem lv = lvUtilizatori.SelectedItems[0];
-                tbSelectedUtilizator.Text += lv.Text + "," + lv.SubItems[1].Text + "," + lv.SubItems[2].Text +
-                                              "," + lv.SubItems[3].Text + "," + lv.SubItems[4].Text;
+                tbSelectedUtilizator.Text += lv.Text + "," + lv.SubItems[1].Text + "," + lv.SubItems[2].Text + "," + lv.SubItems[4].Text;
                 Utilizator u = lv.Tag as Utilizator;
 
                 lvGrupuri.Items.Clear();
@@ -271,6 +270,29 @@ namespace ProiectPaw {
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void contextMenuAplicatie_Opening(object sender, System.ComponentModel.CancelEventArgs e) {
+            if (lvUtilizatori.SelectedItems.Count > 0) {
+                modificaToolStripMenuItem1.Enabled = true;
+                stergeToolStripMenuItem1.Enabled = true;
+            }
+            else {
+                modificaToolStripMenuItem1.Enabled = false;
+                stergeToolStripMenuItem1.Enabled = false;
+            }
+        }
+
+        private void adaugaToolStripMenuItem1_Click(object sender, EventArgs e) {
+            adaugaToolStripMenuItem_Click(sender, e);
+        }
+
+        private void modificaToolStripMenuItem1_Click(object sender, EventArgs e) {
+            modificaToolStripMenuItem_Click(sender, e);
+        }
+
+        private void stergeToolStripMenuItem1_Click(object sender, EventArgs e) {
+            stergeToolStripMenuItem_Click(sender, e);
         }
     }
 }
