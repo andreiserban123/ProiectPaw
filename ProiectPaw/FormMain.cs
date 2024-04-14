@@ -148,24 +148,7 @@ namespace ProiectPaw {
             }
         }
 
-        private void adaugaToolStripMenuItem1_Click(object sender, EventArgs e) {
-            SaveFileDialog fd = new SaveFileDialog();
-            fd.Filter = "fisier grup (*.grp)|*.grp";
-            fd.CheckPathExists = true;
-            if (fd.ShowDialog() == DialogResult.OK) {
-                try {
-                    BinaryFormatter serizator = new BinaryFormatter();
-                    Stream fisier = File.Create(fd.FileName);
-                    serizator.Serialize(fisier, grupuri);
-                    fisier.Close();
-                    MessageBox.Show("Lista de grupuri a fost serializata");
-                }
-                catch (Exception ex) {
-                    MessageBox.Show(ex.Message, "Eroare",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+
 
         private void restaurareBinarToolStripMenuItem_Click(object sender, EventArgs e) {
             OpenFileDialog fd = new OpenFileDialog();
@@ -271,5 +254,23 @@ namespace ProiectPaw {
             }
         }
 
+        private void salvareBinarToolStripMenuItem_Click(object sender, EventArgs e) {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "fisier grup (*.grp)|*.grp";
+            fd.CheckPathExists = true;
+            if (fd.ShowDialog() == DialogResult.OK) {
+                try {
+                    BinaryFormatter serizator = new BinaryFormatter();
+                    Stream fisier = File.Create(fd.FileName);
+                    serizator.Serialize(fisier, grupuri);
+                    fisier.Close();
+                    MessageBox.Show("Lista de grupuri a fost serializata");
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message, "Eroare",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

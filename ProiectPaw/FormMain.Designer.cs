@@ -31,7 +31,7 @@
             this.chData = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.meniulAplicatiei = new System.Windows.Forms.MenuStrip();
             this.fisiereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adaugaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvareBinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restaurareBinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iesireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizatoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,26 +101,26 @@
             this.despreAplicatieToolStripMenuItem});
             this.meniulAplicatiei.Location = new System.Drawing.Point(0, 0);
             this.meniulAplicatiei.Name = "meniulAplicatiei";
-            this.meniulAplicatiei.Size = new System.Drawing.Size(1675, 42);
+            this.meniulAplicatiei.Size = new System.Drawing.Size(1675, 38);
             this.meniulAplicatiei.TabIndex = 1;
             this.meniulAplicatiei.Text = "menuStrip1";
             // 
             // fisiereToolStripMenuItem
             // 
             this.fisiereToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adaugaToolStripMenuItem1,
+            this.salvareBinarToolStripMenuItem,
             this.restaurareBinarToolStripMenuItem,
             this.iesireToolStripMenuItem});
             this.fisiereToolStripMenuItem.Name = "fisiereToolStripMenuItem";
             this.fisiereToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
             this.fisiereToolStripMenuItem.Text = "Fisiere";
             // 
-            // adaugaToolStripMenuItem1
+            // salvareBinarToolStripMenuItem
             // 
-            this.adaugaToolStripMenuItem1.Name = "adaugaToolStripMenuItem1";
-            this.adaugaToolStripMenuItem1.Size = new System.Drawing.Size(315, 40);
-            this.adaugaToolStripMenuItem1.Text = "Salvare binar";
-            this.adaugaToolStripMenuItem1.Click += new System.EventHandler(this.adaugaToolStripMenuItem1_Click);
+            this.salvareBinarToolStripMenuItem.Name = "salvareBinarToolStripMenuItem";
+            this.salvareBinarToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.salvareBinarToolStripMenuItem.Text = "Salvare binar";
+            this.salvareBinarToolStripMenuItem.Click += new System.EventHandler(this.salvareBinarToolStripMenuItem_Click);
             // 
             // restaurareBinarToolStripMenuItem
             // 
@@ -251,7 +251,7 @@
         private System.Windows.Forms.ListView lvGrupuri;
         private System.Windows.Forms.ColumnHeader chGrupuri;
         private System.Windows.Forms.ColumnHeader chDrepturi;
-        private System.Windows.Forms.ToolStripMenuItem adaugaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salvareBinarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restaurareBinarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iesireToolStripMenuItem;
         private System.Windows.Forms.TreeView tvGrupuri;
