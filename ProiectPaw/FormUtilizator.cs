@@ -22,10 +22,6 @@ namespace ProiectPaw {
         }
 
         private void btnAdauga_Click(object sender, System.EventArgs e) {
-            if (tbNume.Text == "" || tbEmail.Text == "" || tbPassword.Text == "" || tbCnp.Text == "") {
-                MessageBox.Show("Completati toate campurile!");
-                return;
-            }
 
             uFormUtilizator.Nume = tbNume.Text;
             uFormUtilizator.Email = tbEmail.Text;
@@ -33,6 +29,32 @@ namespace ProiectPaw {
             uFormUtilizator.CNP = tbCnp.Text;
             uFormUtilizator.DataNastere = dateDataNast.Value;
             numeGrupF = cbGroup.Text;
+
+        }
+
+        private void tbCnp_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
+            if (tbCnp.Text.Length < 13) {
+                errorProvider1.SetError(tbCnp, "CNP nu este valid!");
+                e.Cancel = true;
+            }
+            else errorProvider1.SetError(tbCnp, "");
+        }
+
+        private void tbEmail_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
+            if (!Utils.IsValidEmail(tbEmail.Text)) {
+                errorProvider1.SetError(tbEmail, "Email-ul nu este valid!");
+                e.Cancel = true;
+            }
+            else errorProvider1.SetError(tbEmail, "");
+        }
+
+
+        private void tbPassword_Validating(object sender, System.ComponentModel.CancelEventArgs e) {
+            if (!System.Text.RegularExpressions.Regex.IsMatch(tbPassword.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$")) {
+                errorProvider1.SetError(tbPassword, "Parola nu este suficient de puternica!");
+                e.Cancel = true;
+            }
+            else errorProvider1.SetError(tbPassword, "");
         }
     }
 }

@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.btnAdauga = new System.Windows.Forms.Button();
             this.btnRenunta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.dateDataNast = new System.Windows.Forms.DateTimePicker();
             this.cbGroup = new System.Windows.Forms.ComboBox();
             this.lbGrup = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdauga
@@ -119,6 +122,7 @@
             this.tbCnp.Name = "tbCnp";
             this.tbCnp.Size = new System.Drawing.Size(406, 39);
             this.tbCnp.TabIndex = 8;
+            this.tbCnp.Validating += new System.ComponentModel.CancelEventHandler(this.tbCnp_Validating);
             // 
             // tbEmail
             // 
@@ -127,6 +131,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(406, 39);
             this.tbEmail.TabIndex = 9;
+            this.tbEmail.Validating += new System.ComponentModel.CancelEventHandler(this.tbEmail_Validating);
             // 
             // tbPassword
             // 
@@ -136,6 +141,7 @@
             this.tbPassword.Size = new System.Drawing.Size(406, 39);
             this.tbPassword.TabIndex = 10;
             this.tbPassword.UseSystemPasswordChar = true;
+            this.tbPassword.Validating += new System.ComponentModel.CancelEventHandler(this.tbPassword_Validating);
             // 
             // label5
             // 
@@ -178,6 +184,10 @@
             this.lbGrup.TabIndex = 14;
             this.lbGrup.Text = "Grup";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormUtilizator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -199,6 +209,7 @@
             this.Controls.Add(this.btnAdauga);
             this.Name = "FormUtilizator";
             this.Text = "FormUtilizator";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +231,6 @@
         private System.Windows.Forms.DateTimePicker dateDataNast;
         private System.Windows.Forms.ComboBox cbGroup;
         private System.Windows.Forms.Label lbGrup;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

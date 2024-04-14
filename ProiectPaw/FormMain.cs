@@ -8,10 +8,9 @@ using System.Xml.Serialization;
 
 namespace ProiectPaw {
     public partial class FormMain : Form {
-
-        Utilizator u1;
         List<Grup> grupuri;
         public FormMain() {
+            Utilizator u1;
             InitializeComponent();
             u1 = new Utilizator("Andrei", "andyspeed2003@gmail.com",
                 Utils.ComputeSHA256Hash("pisica123"), "5031009467119", new System.DateTime(2003, 06, 02));
@@ -176,7 +175,6 @@ namespace ProiectPaw {
                         lvUtilizatori.Items.Add(lvi);
                     }
                 }
-
             }
         }
 
@@ -327,6 +325,13 @@ namespace ProiectPaw {
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Grup>));
                 Stream fisier = File.OpenRead(fd.FileName);
                 grupuri.AddRange((List<Grup>)serializer.Deserialize(fisier));
+                fisier.Close();
+                if (lvUtilizatori.Items.Count > 0) {
+                    if (MessageBox.Show("Doresti sa inlocuim Utilizatorii cu cei din fisier?", "intrebare", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                         == DialogResult.Yes)
+                        lvUtilizatori.Items.Clear();
+                }
                 lvUtilizatori.Items.Clear();
 
                 foreach (Grup g in grupuri) {

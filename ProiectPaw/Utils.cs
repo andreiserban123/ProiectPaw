@@ -14,5 +14,10 @@ namespace ProiectPaw {
                 return builder.ToString();
             }
         }
+
+        internal static bool IsValidEmail(string text) {
+            //using regex to check if email is valid
+            return System.Text.RegularExpressions.Regex.IsMatch(text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        }
     }
 }

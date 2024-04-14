@@ -38,6 +38,8 @@
             this.fisiereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvareBinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restaurareBinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salvareXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restaurareXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizatoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adaugaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +50,6 @@
             this.chGrupuri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDrepturi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tvGrupuri = new System.Windows.Forms.TreeView();
-            this.salvareXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restaurareXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuAplicatie.SuspendLayout();
             this.meniulAplicatiei.SuspendLayout();
             this.SuspendLayout();
@@ -142,7 +142,7 @@
             this.despreAplicatieToolStripMenuItem});
             this.meniulAplicatiei.Location = new System.Drawing.Point(0, 0);
             this.meniulAplicatiei.Name = "meniulAplicatiei";
-            this.meniulAplicatiei.Size = new System.Drawing.Size(1675, 38);
+            this.meniulAplicatiei.Size = new System.Drawing.Size(1675, 42);
             this.meniulAplicatiei.TabIndex = 1;
             this.meniulAplicatiei.Text = "menuStrip1";
             // 
@@ -170,6 +170,20 @@
             this.restaurareBinarToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
             this.restaurareBinarToolStripMenuItem.Text = "Restaurare binar";
             this.restaurareBinarToolStripMenuItem.Click += new System.EventHandler(this.restaurareBinarToolStripMenuItem_Click);
+            // 
+            // salvareXMLToolStripMenuItem
+            // 
+            this.salvareXMLToolStripMenuItem.Name = "salvareXMLToolStripMenuItem";
+            this.salvareXMLToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
+            this.salvareXMLToolStripMenuItem.Text = "Salvare XML";
+            this.salvareXMLToolStripMenuItem.Click += new System.EventHandler(this.salvareXMLToolStripMenuItem_Click);
+            // 
+            // restaurareXMLToolStripMenuItem
+            // 
+            this.restaurareXMLToolStripMenuItem.Name = "restaurareXMLToolStripMenuItem";
+            this.restaurareXMLToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
+            this.restaurareXMLToolStripMenuItem.Text = "Restaurare XML";
+            this.restaurareXMLToolStripMenuItem.Click += new System.EventHandler(this.restaurareXMLToolStripMenuItem_Click);
             // 
             // utilizatoriToolStripMenuItem
             // 
@@ -248,20 +262,6 @@
             this.tvGrupuri.TabIndex = 4;
             this.tvGrupuri.DragDrop += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragDrop);
             this.tvGrupuri.DragOver += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragOver);
-            // 
-            // salvareXMLToolStripMenuItem
-            // 
-            this.salvareXMLToolStripMenuItem.Name = "salvareXMLToolStripMenuItem";
-            this.salvareXMLToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
-            this.salvareXMLToolStripMenuItem.Text = "Salvare XML";
-            this.salvareXMLToolStripMenuItem.Click += new System.EventHandler(this.salvareXMLToolStripMenuItem_Click);
-            // 
-            // restaurareXMLToolStripMenuItem
-            // 
-            this.restaurareXMLToolStripMenuItem.Name = "restaurareXMLToolStripMenuItem";
-            this.restaurareXMLToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
-            this.restaurareXMLToolStripMenuItem.Text = "Restaurare XML";
-            this.restaurareXMLToolStripMenuItem.Click += new System.EventHandler(this.restaurareXMLToolStripMenuItem_Click);
             // 
             // FormMain
             // 
