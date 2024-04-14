@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ProiectPaw {
+    [Serializable]
     public class Grup {
         private string nume;
         public List<string> drepturi;

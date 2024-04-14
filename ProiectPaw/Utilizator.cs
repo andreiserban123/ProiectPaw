@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace ProiectPaw {
+    [Serializable]
     public class Utilizator {
         private string nume;
         private string email;

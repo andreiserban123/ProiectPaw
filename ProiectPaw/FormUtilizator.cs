@@ -3,6 +3,7 @@
 namespace ProiectPaw {
     public partial class FormUtilizator : Form {
         public Utilizator uFormUtilizator;
+        public string numeGrupF;
         public FormUtilizator(Utilizator u) {
             InitializeComponent();
             if (u == null) {
@@ -21,7 +22,6 @@ namespace ProiectPaw {
         }
 
         private void btnAdauga_Click(object sender, System.EventArgs e) {
-            // check if all fields are filled
             if (tbNume.Text == "" || tbEmail.Text == "" || tbPassword.Text == "" || tbCnp.Text == "") {
                 MessageBox.Show("Completati toate campurile!");
                 return;
@@ -32,6 +32,7 @@ namespace ProiectPaw {
             uFormUtilizator.Password = Utils.ComputeSHA256Hash(tbPassword.Text);
             uFormUtilizator.CNP = tbCnp.Text;
             uFormUtilizator.DataNastere = dateDataNast.Value;
+            numeGrupF = cbGroup.Text;
         }
     }
 }
