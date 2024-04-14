@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace ProiectPaw {
     public partial class FormMain : Form {
@@ -101,9 +102,8 @@ namespace ProiectPaw {
             if (lvUtilizatori.SelectedItems.Count > 0) {
                 ListViewItem lv = lvUtilizatori.SelectedItems[0];
                 Utilizator u = (Utilizator)lv.Tag;
-                Grup currentGroup = null; // To store the current group of the user
+                Grup currentGroup = null;
 
-                // Save the current group of the user
                 foreach (Grup grup in grupuri) {
                     if (grup.listaUtilizatori.Contains(u)) {
                         currentGroup = grup;
@@ -121,17 +121,14 @@ namespace ProiectPaw {
 
                     Grup selectedGroup = grupuri.Find(grup => grup.Nume == form.numeGrupF);
                     if (selectedGroup != null) {
-                        // Remove the user from the current group and add to the selected group
                         if (currentGroup != null && currentGroup != selectedGroup) {
                             currentGroup.listaUtilizatori.Remove(u);
                             selectedGroup.listaUtilizatori.Add(u);
                         }
                     }
                     else {
-                        // If the selected group doesn't exist, create a new group
                         selectedGroup = new Grup(form.numeGrupF);
                         grupuri.Add(selectedGroup);
-                        // Add the user to the new group
                         selectedGroup.listaUtilizatori.Add(u);
                     }
 
@@ -142,8 +139,16 @@ namespace ProiectPaw {
 
         private void stergeToolStripMenuItem_Click(object sender, System.EventArgs e) {
             if (lvUtilizatori.SelectedItems.Count > 0) {
-                if (MessageBox.Show("Sigur doriti sa stergeti utilizatorul?", "Stergere", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Sigur doriti sa stergeti utilizatorul?", "Stergere", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                    Utilizator u = (Utilizator)lvUtilizatori.SelectedItems[0].Tag;
+                    foreach (Grup g in grupuri) {
+                        if (g.listaUtilizatori.Contains(u)) {
+                            g.listaUtilizatori.Remove(u);
+                            break;
+                        }
+                    }
                     lvUtilizatori.Items.Remove(lvUtilizatori.SelectedItems[0]);
+                }
             }
         }
 
@@ -293,6 +298,49 @@ namespace ProiectPaw {
             stergeToolStripMenuItem_Click(sender, e);
         }
 
+        private void salvareXMLToolStripMenuItem_Click(object sender, EventArgs e) {
+            SaveFileDialog fd = new SaveFileDialog();
+            fd.Filter = "fisier xml (*.xml)|*.xml";
+            fd.CheckPathExists = true;
 
+            if (fd.ShowDialog() == DialogResult.OK) {
+                try {
+
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Grup>));
+                    Stream fisier = File.Create(fd.FileName);
+                    serializer.Serialize(fisier, grupuri);
+                    fisier.Close();
+                    MessageBox.Show("Lista de grupuri a fost serializata");
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void restaurareXMLToolStripMenuItem_Click(object sender, EventArgs e) {
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "fisier xml (*.xml)|*.xml";
+            fd.CheckFileExists = true;
+            if (fd.ShowDialog() == DialogResult.OK) {
+                grupuri = new List<Grup>();
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Grup>));
+                Stream fisier = File.OpenRead(fd.FileName);
+                grupuri.AddRange((List<Grup>)serializer.Deserialize(fisier));
+                lvUtilizatori.Items.Clear();
+
+                foreach (Grup g in grupuri) {
+                    foreach (Utilizator u in g.listaUtilizatori) {
+                        ListViewItem lvi = new ListViewItem(
+                                                       new string[] {
+                                u.Nume, u.CNP, u.Email, u.Password, u.DataNastere.ToString(),
+                            }
+                                                                                  );
+                        lvi.Tag = u;
+                        lvUtilizatori.Items.Add(lvi);
+                    }
+                }
+            }
+        }
     }
 }

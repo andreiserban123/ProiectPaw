@@ -41,14 +41,15 @@
             // 
             // btnAdauga
             // 
+            this.btnAdauga.BackColor = System.Drawing.Color.LightGreen;
             this.btnAdauga.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnAdauga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAdauga.Location = new System.Drawing.Point(237, 652);
+            this.btnAdauga.Location = new System.Drawing.Point(322, 655);
             this.btnAdauga.Name = "btnAdauga";
-            this.btnAdauga.Size = new System.Drawing.Size(212, 97);
+            this.btnAdauga.Size = new System.Drawing.Size(273, 124);
             this.btnAdauga.TabIndex = 0;
             this.btnAdauga.Text = "Adauga";
-            this.btnAdauga.UseVisualStyleBackColor = true;
+            this.btnAdauga.UseVisualStyleBackColor = false;
             this.btnAdauga.Click += new System.EventHandler(this.btnAdauga_Click);
             // 
             // btnRenunta
@@ -56,9 +57,9 @@
             this.btnRenunta.BackColor = System.Drawing.Color.IndianRed;
             this.btnRenunta.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnRenunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRenunta.Location = new System.Drawing.Point(911, 652);
+            this.btnRenunta.Location = new System.Drawing.Point(890, 655);
             this.btnRenunta.Name = "btnRenunta";
-            this.btnRenunta.Size = new System.Drawing.Size(212, 97);
+            this.btnRenunta.Size = new System.Drawing.Size(252, 124);
             this.btnRenunta.TabIndex = 2;
             this.btnRenunta.Text = "Renunta";
             this.btnRenunta.UseVisualStyleBackColor = false;
@@ -67,9 +68,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(329, 9);
+            this.label1.Location = new System.Drawing.Point(329, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 29);
+            this.label1.Size = new System.Drawing.Size(89, 32);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nume";
             // 
@@ -77,9 +78,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(331, 91);
+            this.label2.Location = new System.Drawing.Point(331, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 29);
+            this.label2.Size = new System.Drawing.Size(73, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "CNP";
             // 
@@ -87,9 +88,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(329, 193);
+            this.label3.Location = new System.Drawing.Point(329, 227);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 29);
+            this.label3.Size = new System.Drawing.Size(86, 32);
             this.label3.TabIndex = 5;
             this.label3.Text = "Email";
             // 
@@ -97,42 +98,42 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(329, 293);
+            this.label4.Location = new System.Drawing.Point(329, 327);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 29);
+            this.label4.Size = new System.Drawing.Size(138, 32);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password";
             // 
             // tbNume
             // 
             this.tbNume.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbNume.Location = new System.Drawing.Point(550, 16);
+            this.tbNume.Location = new System.Drawing.Point(550, 50);
             this.tbNume.Name = "tbNume";
-            this.tbNume.Size = new System.Drawing.Size(406, 35);
+            this.tbNume.Size = new System.Drawing.Size(406, 39);
             this.tbNume.TabIndex = 7;
             // 
             // tbCnp
             // 
             this.tbCnp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbCnp.Location = new System.Drawing.Point(550, 95);
+            this.tbCnp.Location = new System.Drawing.Point(550, 129);
             this.tbCnp.Name = "tbCnp";
-            this.tbCnp.Size = new System.Drawing.Size(406, 35);
+            this.tbCnp.Size = new System.Drawing.Size(406, 39);
             this.tbCnp.TabIndex = 8;
             // 
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbEmail.Location = new System.Drawing.Point(550, 194);
+            this.tbEmail.Location = new System.Drawing.Point(550, 228);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(406, 35);
+            this.tbEmail.Size = new System.Drawing.Size(406, 39);
             this.tbEmail.TabIndex = 9;
             // 
             // tbPassword
             // 
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbPassword.Location = new System.Drawing.Point(550, 294);
+            this.tbPassword.Location = new System.Drawing.Point(550, 328);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(406, 35);
+            this.tbPassword.Size = new System.Drawing.Size(406, 39);
             this.tbPassword.TabIndex = 10;
             this.tbPassword.UseSystemPasswordChar = true;
             // 
@@ -140,18 +141,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(329, 388);
+            this.label5.Location = new System.Drawing.Point(329, 422);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 29);
+            this.label5.Size = new System.Drawing.Size(135, 32);
             this.label5.TabIndex = 11;
             this.label5.Text = "Data nast";
             // 
             // dateDataNast
             // 
             this.dateDataNast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dateDataNast.Location = new System.Drawing.Point(550, 388);
+            this.dateDataNast.Location = new System.Drawing.Point(550, 422);
             this.dateDataNast.Name = "dateDataNast";
-            this.dateDataNast.Size = new System.Drawing.Size(524, 35);
+            this.dateDataNast.Size = new System.Drawing.Size(524, 39);
             this.dateDataNast.TabIndex = 12;
             // 
             // cbGroup
@@ -162,18 +163,18 @@
             "Admin",
             "User",
             "Guest"});
-            this.cbGroup.Location = new System.Drawing.Point(550, 487);
+            this.cbGroup.Location = new System.Drawing.Point(550, 521);
             this.cbGroup.Name = "cbGroup";
-            this.cbGroup.Size = new System.Drawing.Size(524, 37);
+            this.cbGroup.Size = new System.Drawing.Size(524, 40);
             this.cbGroup.TabIndex = 13;
             // 
             // lbGrup
             // 
             this.lbGrup.AutoSize = true;
             this.lbGrup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbGrup.Location = new System.Drawing.Point(329, 475);
+            this.lbGrup.Location = new System.Drawing.Point(329, 509);
             this.lbGrup.Name = "lbGrup";
-            this.lbGrup.Size = new System.Drawing.Size(66, 29);
+            this.lbGrup.Size = new System.Drawing.Size(77, 32);
             this.lbGrup.TabIndex = 14;
             this.lbGrup.Text = "Grup";
             // 

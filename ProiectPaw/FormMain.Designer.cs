@@ -38,7 +38,6 @@
             this.fisiereToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvareBinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restaurareBinarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iesireToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizatoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adaugaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +48,8 @@
             this.chGrupuri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDrepturi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tvGrupuri = new System.Windows.Forms.TreeView();
+            this.salvareXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restaurareXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuAplicatie.SuspendLayout();
             this.meniulAplicatiei.SuspendLayout();
             this.SuspendLayout();
@@ -133,6 +134,7 @@
             // 
             // meniulAplicatiei
             // 
+            this.meniulAplicatiei.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.meniulAplicatiei.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.meniulAplicatiei.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fisiereToolStripMenuItem,
@@ -149,7 +151,8 @@
             this.fisiereToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salvareBinarToolStripMenuItem,
             this.restaurareBinarToolStripMenuItem,
-            this.iesireToolStripMenuItem});
+            this.salvareXMLToolStripMenuItem,
+            this.restaurareXMLToolStripMenuItem});
             this.fisiereToolStripMenuItem.Name = "fisiereToolStripMenuItem";
             this.fisiereToolStripMenuItem.Size = new System.Drawing.Size(89, 34);
             this.fisiereToolStripMenuItem.Text = "Fisiere";
@@ -167,12 +170,6 @@
             this.restaurareBinarToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
             this.restaurareBinarToolStripMenuItem.Text = "Restaurare binar";
             this.restaurareBinarToolStripMenuItem.Click += new System.EventHandler(this.restaurareBinarToolStripMenuItem_Click);
-            // 
-            // iesireToolStripMenuItem
-            // 
-            this.iesireToolStripMenuItem.Name = "iesireToolStripMenuItem";
-            this.iesireToolStripMenuItem.Size = new System.Drawing.Size(282, 40);
-            this.iesireToolStripMenuItem.Text = "Iesire";
             // 
             // utilizatoriToolStripMenuItem
             // 
@@ -252,6 +249,20 @@
             this.tvGrupuri.DragDrop += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragDrop);
             this.tvGrupuri.DragOver += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragOver);
             // 
+            // salvareXMLToolStripMenuItem
+            // 
+            this.salvareXMLToolStripMenuItem.Name = "salvareXMLToolStripMenuItem";
+            this.salvareXMLToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.salvareXMLToolStripMenuItem.Text = "Salvare XML";
+            this.salvareXMLToolStripMenuItem.Click += new System.EventHandler(this.salvareXMLToolStripMenuItem_Click);
+            // 
+            // restaurareXMLToolStripMenuItem
+            // 
+            this.restaurareXMLToolStripMenuItem.Name = "restaurareXMLToolStripMenuItem";
+            this.restaurareXMLToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
+            this.restaurareXMLToolStripMenuItem.Text = "Restaurare XML";
+            this.restaurareXMLToolStripMenuItem.Click += new System.EventHandler(this.restaurareXMLToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -293,13 +304,14 @@
         private System.Windows.Forms.ColumnHeader chDrepturi;
         private System.Windows.Forms.ToolStripMenuItem salvareBinarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restaurareBinarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem iesireToolStripMenuItem;
         private System.Windows.Forms.TreeView tvGrupuri;
         private System.Windows.Forms.ContextMenuStrip contextMenuAplicatie;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem adaugaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem modificaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem stergeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salvareXMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem restaurareXMLToolStripMenuItem;
     }
 }
 
