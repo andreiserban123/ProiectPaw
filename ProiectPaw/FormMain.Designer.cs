@@ -50,8 +50,21 @@
             this.chGrupuri = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDrepturi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tvGrupuri = new System.Windows.Forms.TreeView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.myDBDataSet = new ProiectPaw.MyDBDataSet();
+            this.utilizatoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.utilizatoriTableAdapter = new ProiectPaw.MyDBDataSetTableAdapters.UtilizatoriTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datanastereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuAplicatie.SuspendLayout();
             this.meniulAplicatiei.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilizatoriBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lvUtilizatori
@@ -65,10 +78,11 @@
             this.lvUtilizatori.ContextMenuStrip = this.contextMenuAplicatie;
             this.lvUtilizatori.FullRowSelect = true;
             this.lvUtilizatori.HideSelection = false;
-            this.lvUtilizatori.Location = new System.Drawing.Point(285, 127);
+            this.lvUtilizatori.Location = new System.Drawing.Point(348, 152);
+            this.lvUtilizatori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvUtilizatori.MultiSelect = false;
             this.lvUtilizatori.Name = "lvUtilizatori";
-            this.lvUtilizatori.Size = new System.Drawing.Size(786, 309);
+            this.lvUtilizatori.Size = new System.Drawing.Size(960, 370);
             this.lvUtilizatori.TabIndex = 0;
             this.lvUtilizatori.UseCompatibleStateImageBehavior = false;
             this.lvUtilizatori.View = System.Windows.Forms.View.Details;
@@ -142,7 +156,8 @@
             this.despreAplicatieToolStripMenuItem});
             this.meniulAplicatiei.Location = new System.Drawing.Point(0, 0);
             this.meniulAplicatiei.Name = "meniulAplicatiei";
-            this.meniulAplicatiei.Size = new System.Drawing.Size(1675, 42);
+            this.meniulAplicatiei.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.meniulAplicatiei.Size = new System.Drawing.Size(2047, 38);
             this.meniulAplicatiei.TabIndex = 1;
             this.meniulAplicatiei.Text = "menuStrip1";
             // 
@@ -224,9 +239,10 @@
             // 
             // tbSelectedUtilizator
             // 
-            this.tbSelectedUtilizator.Location = new System.Drawing.Point(285, 497);
+            this.tbSelectedUtilizator.Location = new System.Drawing.Point(348, 596);
+            this.tbSelectedUtilizator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSelectedUtilizator.Name = "tbSelectedUtilizator";
-            this.tbSelectedUtilizator.Size = new System.Drawing.Size(786, 26);
+            this.tbSelectedUtilizator.Size = new System.Drawing.Size(960, 29);
             this.tbSelectedUtilizator.TabIndex = 2;
             // 
             // lvGrupuri
@@ -235,9 +251,10 @@
             this.chGrupuri,
             this.chDrepturi});
             this.lvGrupuri.HideSelection = false;
-            this.lvGrupuri.Location = new System.Drawing.Point(1207, 127);
+            this.lvGrupuri.Location = new System.Drawing.Point(1475, 152);
+            this.lvGrupuri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvGrupuri.Name = "lvGrupuri";
-            this.lvGrupuri.Size = new System.Drawing.Size(310, 213);
+            this.lvGrupuri.Size = new System.Drawing.Size(378, 255);
             this.lvGrupuri.TabIndex = 3;
             this.lvGrupuri.UseCompatibleStateImageBehavior = false;
             this.lvGrupuri.View = System.Windows.Forms.View.Details;
@@ -256,28 +273,119 @@
             // 
             this.tvGrupuri.AllowDrop = true;
             this.tvGrupuri.LabelEdit = true;
-            this.tvGrupuri.Location = new System.Drawing.Point(285, 553);
+            this.tvGrupuri.Location = new System.Drawing.Point(162, 640);
+            this.tvGrupuri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tvGrupuri.Name = "tvGrupuri";
-            this.tvGrupuri.Size = new System.Drawing.Size(661, 206);
+            this.tvGrupuri.Size = new System.Drawing.Size(807, 246);
             this.tvGrupuri.TabIndex = 4;
             this.tvGrupuri.DragDrop += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragDrop);
             this.tvGrupuri.DragOver += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragOver);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.numeDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.cnpDataGridViewTextBoxColumn,
+            this.datanastereDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.utilizatoriBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(1086, 675);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 72;
+            this.dataGridView1.RowTemplate.Height = 31;
+            this.dataGridView1.Size = new System.Drawing.Size(961, 211);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // myDBDataSet
+            // 
+            this.myDBDataSet.DataSetName = "MyDBDataSet";
+            this.myDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // utilizatoriBindingSource
+            // 
+            this.utilizatoriBindingSource.DataMember = "Utilizatori";
+            this.utilizatoriBindingSource.DataSource = this.myDBDataSet;
+            // 
+            // utilizatoriTableAdapter
+            // 
+            this.utilizatoriTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.idDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // numeDataGridViewTextBoxColumn
+            // 
+            this.numeDataGridViewTextBoxColumn.DataPropertyName = "nume";
+            this.numeDataGridViewTextBoxColumn.HeaderText = "nume";
+            this.numeDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.numeDataGridViewTextBoxColumn.Name = "numeDataGridViewTextBoxColumn";
+            this.numeDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Visible = false;
+            this.passwordDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // cnpDataGridViewTextBoxColumn
+            // 
+            this.cnpDataGridViewTextBoxColumn.DataPropertyName = "cnp";
+            this.cnpDataGridViewTextBoxColumn.HeaderText = "cnp";
+            this.cnpDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.cnpDataGridViewTextBoxColumn.Name = "cnpDataGridViewTextBoxColumn";
+            this.cnpDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // datanastereDataGridViewTextBoxColumn
+            // 
+            this.datanastereDataGridViewTextBoxColumn.DataPropertyName = "data_nastere";
+            this.datanastereDataGridViewTextBoxColumn.HeaderText = "data_nastere";
+            this.datanastereDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.datanastereDataGridViewTextBoxColumn.Name = "datanastereDataGridViewTextBoxColumn";
+            this.datanastereDataGridViewTextBoxColumn.Width = 175;
+            // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1675, 785);
+            this.ClientSize = new System.Drawing.Size(2047, 942);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tvGrupuri);
             this.Controls.Add(this.lvGrupuri);
             this.Controls.Add(this.tbSelectedUtilizator);
             this.Controls.Add(this.lvUtilizatori);
             this.Controls.Add(this.meniulAplicatiei);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.contextMenuAplicatie.ResumeLayout(false);
             this.meniulAplicatiei.ResumeLayout(false);
             this.meniulAplicatiei.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.utilizatoriBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,6 +420,16 @@
         private System.Windows.Forms.ToolStripMenuItem stergeToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem salvareXMLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restaurareXMLToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MyDBDataSet myDBDataSet;
+        private System.Windows.Forms.BindingSource utilizatoriBindingSource;
+        private MyDBDataSetTableAdapters.UtilizatoriTableAdapter utilizatoriTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnpDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datanastereDataGridViewTextBoxColumn;
     }
 }
 
