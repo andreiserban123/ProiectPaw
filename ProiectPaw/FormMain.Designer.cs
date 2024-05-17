@@ -51,10 +51,11 @@
             this.chDrepturi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tvGrupuri = new System.Windows.Forms.TreeView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSalveaza = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datanastereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.utilizatoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -78,10 +79,11 @@
             this.lvUtilizatori.ContextMenuStrip = this.contextMenuAplicatie;
             this.lvUtilizatori.FullRowSelect = true;
             this.lvUtilizatori.HideSelection = false;
-            this.lvUtilizatori.Location = new System.Drawing.Point(253, 101);
+            this.lvUtilizatori.Location = new System.Drawing.Point(348, 152);
+            this.lvUtilizatori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvUtilizatori.MultiSelect = false;
             this.lvUtilizatori.Name = "lvUtilizatori";
-            this.lvUtilizatori.Size = new System.Drawing.Size(699, 248);
+            this.lvUtilizatori.Size = new System.Drawing.Size(960, 370);
             this.lvUtilizatori.TabIndex = 0;
             this.lvUtilizatori.UseCompatibleStateImageBehavior = false;
             this.lvUtilizatori.View = System.Windows.Forms.View.Details;
@@ -121,32 +123,33 @@
             this.modificaToolStripMenuItem1,
             this.stergeToolStripMenuItem1});
             this.contextMenuAplicatie.Name = "contextMenuAplicatie";
-            this.contextMenuAplicatie.Size = new System.Drawing.Size(138, 76);
+            this.contextMenuAplicatie.Size = new System.Drawing.Size(154, 100);
             this.contextMenuAplicatie.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuAplicatie_Opening);
             // 
             // adaugaToolStripMenuItem1
             // 
             this.adaugaToolStripMenuItem1.Name = "adaugaToolStripMenuItem1";
-            this.adaugaToolStripMenuItem1.Size = new System.Drawing.Size(137, 24);
+            this.adaugaToolStripMenuItem1.Size = new System.Drawing.Size(153, 32);
             this.adaugaToolStripMenuItem1.Text = "Adauga";
             this.adaugaToolStripMenuItem1.Click += new System.EventHandler(this.adaugaToolStripMenuItem1_Click);
             // 
             // modificaToolStripMenuItem1
             // 
             this.modificaToolStripMenuItem1.Name = "modificaToolStripMenuItem1";
-            this.modificaToolStripMenuItem1.Size = new System.Drawing.Size(137, 24);
+            this.modificaToolStripMenuItem1.Size = new System.Drawing.Size(153, 32);
             this.modificaToolStripMenuItem1.Text = "Modifica";
             this.modificaToolStripMenuItem1.Click += new System.EventHandler(this.modificaToolStripMenuItem1_Click);
             // 
             // stergeToolStripMenuItem1
             // 
             this.stergeToolStripMenuItem1.Name = "stergeToolStripMenuItem1";
-            this.stergeToolStripMenuItem1.Size = new System.Drawing.Size(137, 24);
+            this.stergeToolStripMenuItem1.Size = new System.Drawing.Size(153, 32);
             this.stergeToolStripMenuItem1.Text = "Sterge";
             this.stergeToolStripMenuItem1.Click += new System.EventHandler(this.stergeToolStripMenuItem1_Click);
             // 
             // meniulAplicatiei
             // 
+            this.meniulAplicatiei.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.meniulAplicatiei.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.meniulAplicatiei.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fisiereToolStripMenuItem,
@@ -154,8 +157,8 @@
             this.despreAplicatieToolStripMenuItem});
             this.meniulAplicatiei.Location = new System.Drawing.Point(0, 0);
             this.meniulAplicatiei.Name = "meniulAplicatiei";
-            this.meniulAplicatiei.Padding = new System.Windows.Forms.Padding(5, 1, 0, 1);
-            this.meniulAplicatiei.Size = new System.Drawing.Size(1705, 26);
+            this.meniulAplicatiei.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.meniulAplicatiei.Size = new System.Drawing.Size(2144, 36);
             this.meniulAplicatiei.TabIndex = 1;
             this.meniulAplicatiei.Text = "menuStrip1";
             // 
@@ -167,34 +170,34 @@
             this.salvareXMLToolStripMenuItem,
             this.restaurareXMLToolStripMenuItem});
             this.fisiereToolStripMenuItem.Name = "fisiereToolStripMenuItem";
-            this.fisiereToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.fisiereToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
             this.fisiereToolStripMenuItem.Text = "Fisiere";
             // 
             // salvareBinarToolStripMenuItem
             // 
             this.salvareBinarToolStripMenuItem.Name = "salvareBinarToolStripMenuItem";
-            this.salvareBinarToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.salvareBinarToolStripMenuItem.Size = new System.Drawing.Size(241, 34);
             this.salvareBinarToolStripMenuItem.Text = "Salvare binar";
             this.salvareBinarToolStripMenuItem.Click += new System.EventHandler(this.salvareBinarToolStripMenuItem_Click);
             // 
             // restaurareBinarToolStripMenuItem
             // 
             this.restaurareBinarToolStripMenuItem.Name = "restaurareBinarToolStripMenuItem";
-            this.restaurareBinarToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.restaurareBinarToolStripMenuItem.Size = new System.Drawing.Size(241, 34);
             this.restaurareBinarToolStripMenuItem.Text = "Restaurare binar";
             this.restaurareBinarToolStripMenuItem.Click += new System.EventHandler(this.restaurareBinarToolStripMenuItem_Click);
             // 
             // salvareXMLToolStripMenuItem
             // 
             this.salvareXMLToolStripMenuItem.Name = "salvareXMLToolStripMenuItem";
-            this.salvareXMLToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.salvareXMLToolStripMenuItem.Size = new System.Drawing.Size(241, 34);
             this.salvareXMLToolStripMenuItem.Text = "Salvare XML";
             this.salvareXMLToolStripMenuItem.Click += new System.EventHandler(this.salvareXMLToolStripMenuItem_Click);
             // 
             // restaurareXMLToolStripMenuItem
             // 
             this.restaurareXMLToolStripMenuItem.Name = "restaurareXMLToolStripMenuItem";
-            this.restaurareXMLToolStripMenuItem.Size = new System.Drawing.Size(200, 26);
+            this.restaurareXMLToolStripMenuItem.Size = new System.Drawing.Size(241, 34);
             this.restaurareXMLToolStripMenuItem.Text = "Restaurare XML";
             this.restaurareXMLToolStripMenuItem.Click += new System.EventHandler(this.restaurareXMLToolStripMenuItem_Click);
             // 
@@ -205,41 +208,42 @@
             this.modificaToolStripMenuItem,
             this.stergeToolStripMenuItem});
             this.utilizatoriToolStripMenuItem.Name = "utilizatoriToolStripMenuItem";
-            this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(102, 32);
             this.utilizatoriToolStripMenuItem.Text = "Utilizatori";
             // 
             // adaugaToolStripMenuItem
             // 
             this.adaugaToolStripMenuItem.Name = "adaugaToolStripMenuItem";
-            this.adaugaToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.adaugaToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
             this.adaugaToolStripMenuItem.Text = "adauga";
             this.adaugaToolStripMenuItem.Click += new System.EventHandler(this.adaugaToolStripMenuItem_Click);
             // 
             // modificaToolStripMenuItem
             // 
             this.modificaToolStripMenuItem.Name = "modificaToolStripMenuItem";
-            this.modificaToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.modificaToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
             this.modificaToolStripMenuItem.Text = "modifica";
             this.modificaToolStripMenuItem.Click += new System.EventHandler(this.modificaToolStripMenuItem_Click);
             // 
             // stergeToolStripMenuItem
             // 
             this.stergeToolStripMenuItem.Name = "stergeToolStripMenuItem";
-            this.stergeToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
+            this.stergeToolStripMenuItem.Size = new System.Drawing.Size(183, 34);
             this.stergeToolStripMenuItem.Text = "sterge";
             this.stergeToolStripMenuItem.Click += new System.EventHandler(this.stergeToolStripMenuItem_Click);
             // 
             // despreAplicatieToolStripMenuItem
             // 
             this.despreAplicatieToolStripMenuItem.Name = "despreAplicatieToolStripMenuItem";
-            this.despreAplicatieToolStripMenuItem.Size = new System.Drawing.Size(131, 24);
+            this.despreAplicatieToolStripMenuItem.Size = new System.Drawing.Size(153, 32);
             this.despreAplicatieToolStripMenuItem.Text = "Despre aplicatie";
             // 
             // tbSelectedUtilizator
             // 
-            this.tbSelectedUtilizator.Location = new System.Drawing.Point(253, 397);
+            this.tbSelectedUtilizator.Location = new System.Drawing.Point(348, 596);
+            this.tbSelectedUtilizator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbSelectedUtilizator.Name = "tbSelectedUtilizator";
-            this.tbSelectedUtilizator.Size = new System.Drawing.Size(699, 22);
+            this.tbSelectedUtilizator.Size = new System.Drawing.Size(960, 29);
             this.tbSelectedUtilizator.TabIndex = 2;
             // 
             // lvGrupuri
@@ -248,9 +252,10 @@
             this.chGrupuri,
             this.chDrepturi});
             this.lvGrupuri.HideSelection = false;
-            this.lvGrupuri.Location = new System.Drawing.Point(1073, 101);
+            this.lvGrupuri.Location = new System.Drawing.Point(1475, 152);
+            this.lvGrupuri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lvGrupuri.Name = "lvGrupuri";
-            this.lvGrupuri.Size = new System.Drawing.Size(276, 171);
+            this.lvGrupuri.Size = new System.Drawing.Size(378, 254);
             this.lvGrupuri.TabIndex = 3;
             this.lvGrupuri.UseCompatibleStateImageBehavior = false;
             this.lvGrupuri.View = System.Windows.Forms.View.Details;
@@ -269,32 +274,44 @@
             // 
             this.tvGrupuri.AllowDrop = true;
             this.tvGrupuri.LabelEdit = true;
-            this.tvGrupuri.Location = new System.Drawing.Point(118, 427);
+            this.tvGrupuri.Location = new System.Drawing.Point(162, 640);
+            this.tvGrupuri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tvGrupuri.Name = "tvGrupuri";
-            this.tvGrupuri.Size = new System.Drawing.Size(588, 165);
+            this.tvGrupuri.Size = new System.Drawing.Size(807, 246);
             this.tvGrupuri.TabIndex = 4;
             this.tvGrupuri.DragDrop += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragDrop);
             this.tvGrupuri.DragOver += new System.Windows.Forms.DragEventHandler(this.tvGrupuri_DragOver);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowDrop = true;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.numeDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
+            this.password,
             this.cnpDataGridViewTextBoxColumn,
             this.datanastereDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.utilizatoriBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(790, 450);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(1045, 674);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 72;
             this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(699, 141);
+            this.dataGridView1.Size = new System.Drawing.Size(1087, 212);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // btnSalveaza
+            // 
+            this.btnSalveaza.Location = new System.Drawing.Point(1045, 948);
+            this.btnSalveaza.Name = "btnSalveaza";
+            this.btnSalveaza.Size = new System.Drawing.Size(402, 139);
+            this.btnSalveaza.TabIndex = 6;
+            this.btnSalveaza.Text = "salveaza";
+            this.btnSalveaza.UseVisualStyleBackColor = true;
+            this.btnSalveaza.Click += new System.EventHandler(this.btnSalveaza_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -322,14 +339,13 @@
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.Width = 175;
             // 
-            // passwordDataGridViewTextBoxColumn
+            // password
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
-            this.passwordDataGridViewTextBoxColumn.Visible = false;
-            this.passwordDataGridViewTextBoxColumn.Width = 175;
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "password";
+            this.password.MinimumWidth = 9;
+            this.password.Name = "password";
+            this.password.Width = 175;
             // 
             // cnpDataGridViewTextBoxColumn
             // 
@@ -363,15 +379,17 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1705, 675);
+            this.ClientSize = new System.Drawing.Size(2144, 1236);
+            this.Controls.Add(this.btnSalveaza);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tvGrupuri);
             this.Controls.Add(this.lvGrupuri);
             this.Controls.Add(this.tbSelectedUtilizator);
             this.Controls.Add(this.lvUtilizatori);
             this.Controls.Add(this.meniulAplicatiei);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -419,10 +437,11 @@
         private MyDBDataSet myDBDataSet;
         private System.Windows.Forms.BindingSource utilizatoriBindingSource;
         private MyDBDataSetTableAdapters.UtilizatoriTableAdapter utilizatoriTableAdapter;
+        private System.Windows.Forms.Button btnSalveaza;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn cnpDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datanastereDataGridViewTextBoxColumn;
     }

@@ -480,7 +480,7 @@ namespace ProiectPaw {
                 this.columnId.Unique = true;
                 this.columnnume.MaxLength = 50;
                 this.columnemail.MaxLength = 50;
-                this.columnpassword.MaxLength = 50;
+                this.columnpassword.MaxLength = 1000;
                 this.columncnp.MaxLength = 50;
             }
             

@@ -12,6 +12,7 @@ namespace ProiectPaw {
         public FormMain() {
             Utilizator u1;
             InitializeComponent();
+            dataGridView1.AutoGenerateColumns = true;
             u1 = new Utilizator("Andrei", "andyspeed2003@gmail.com",
                 Utils.ComputeSHA256Hash("pisica123"), "5031009467119", new System.DateTime(2003, 06, 02));
             grupuri = new List<Grup>();
@@ -353,5 +354,37 @@ namespace ProiectPaw {
             this.utilizatoriTableAdapter.Fill(this.myDBDataSet.Utilizatori);
 
         }
+
+        private void btnSalveaza_Click(object sender, EventArgs e) {
+            try {
+                // Validate all controls on the form
+                this.Validate();
+
+                // Iterate through each row in the DataGridView
+                foreach (DataGridViewRow row in dataGridView1.Rows) {
+                    if (row.IsNewRow) continue; // Skip the new row placeholder
+                    var cellPassword = row.Cells["Password"]; // Assuming "Password" is the name of the password column
+                    if (cellPassword.Value != null) {
+                        string rawPassword = cellPassword.Value.ToString();
+                        string hashedPassword = Utils.ComputeSHA256Hash(rawPassword);
+                        cellPassword.Value = hashedPassword; // Set the hashed password back into the cell
+                    }
+                }
+
+                // End editing on the BindingSource to push changes to the DataSet
+                this.utilizatoriBindingSource.EndEdit();
+
+                // Update the database with changes from the DataSet
+                this.utilizatoriTableAdapter.Update(this.myDBDataSet.Utilizatori);
+
+                // Show success message
+                MessageBox.Show("Datele au fost salvate");
+            }
+            catch (Exception ex) {
+                // Show error message if something went wrong
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }
