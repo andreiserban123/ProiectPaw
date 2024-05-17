@@ -52,15 +52,15 @@
             this.tvGrupuri = new System.Windows.Forms.TreeView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSalveaza = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.datanastereDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.utilizatoriBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.myDBDataSet = new ProiectPaw.MyDBDataSet();
             this.utilizatoriTableAdapter = new ProiectPaw.MyDBDataSetTableAdapters.UtilizatoriTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nume = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataNastere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuAplicatie.SuspendLayout();
             this.meniulAplicatiei.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -80,7 +80,7 @@
             this.lvUtilizatori.FullRowSelect = true;
             this.lvUtilizatori.HideSelection = false;
             this.lvUtilizatori.Location = new System.Drawing.Point(348, 152);
-            this.lvUtilizatori.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvUtilizatori.Margin = new System.Windows.Forms.Padding(4);
             this.lvUtilizatori.MultiSelect = false;
             this.lvUtilizatori.Name = "lvUtilizatori";
             this.lvUtilizatori.Size = new System.Drawing.Size(960, 370);
@@ -158,7 +158,7 @@
             this.meniulAplicatiei.Location = new System.Drawing.Point(0, 0);
             this.meniulAplicatiei.Name = "meniulAplicatiei";
             this.meniulAplicatiei.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.meniulAplicatiei.Size = new System.Drawing.Size(2144, 36);
+            this.meniulAplicatiei.Size = new System.Drawing.Size(4238, 54);
             this.meniulAplicatiei.TabIndex = 1;
             this.meniulAplicatiei.Text = "menuStrip1";
             // 
@@ -170,7 +170,7 @@
             this.salvareXMLToolStripMenuItem,
             this.restaurareXMLToolStripMenuItem});
             this.fisiereToolStripMenuItem.Name = "fisiereToolStripMenuItem";
-            this.fisiereToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
+            this.fisiereToolStripMenuItem.Size = new System.Drawing.Size(77, 50);
             this.fisiereToolStripMenuItem.Text = "Fisiere";
             // 
             // salvareBinarToolStripMenuItem
@@ -208,7 +208,7 @@
             this.modificaToolStripMenuItem,
             this.stergeToolStripMenuItem});
             this.utilizatoriToolStripMenuItem.Name = "utilizatoriToolStripMenuItem";
-            this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(102, 32);
+            this.utilizatoriToolStripMenuItem.Size = new System.Drawing.Size(102, 50);
             this.utilizatoriToolStripMenuItem.Text = "Utilizatori";
             // 
             // adaugaToolStripMenuItem
@@ -235,13 +235,13 @@
             // despreAplicatieToolStripMenuItem
             // 
             this.despreAplicatieToolStripMenuItem.Name = "despreAplicatieToolStripMenuItem";
-            this.despreAplicatieToolStripMenuItem.Size = new System.Drawing.Size(153, 32);
+            this.despreAplicatieToolStripMenuItem.Size = new System.Drawing.Size(153, 50);
             this.despreAplicatieToolStripMenuItem.Text = "Despre aplicatie";
             // 
             // tbSelectedUtilizator
             // 
             this.tbSelectedUtilizator.Location = new System.Drawing.Point(348, 596);
-            this.tbSelectedUtilizator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSelectedUtilizator.Margin = new System.Windows.Forms.Padding(4);
             this.tbSelectedUtilizator.Name = "tbSelectedUtilizator";
             this.tbSelectedUtilizator.Size = new System.Drawing.Size(960, 29);
             this.tbSelectedUtilizator.TabIndex = 2;
@@ -253,7 +253,7 @@
             this.chDrepturi});
             this.lvGrupuri.HideSelection = false;
             this.lvGrupuri.Location = new System.Drawing.Point(1475, 152);
-            this.lvGrupuri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvGrupuri.Margin = new System.Windows.Forms.Padding(4);
             this.lvGrupuri.Name = "lvGrupuri";
             this.lvGrupuri.Size = new System.Drawing.Size(378, 254);
             this.lvGrupuri.TabIndex = 3;
@@ -275,7 +275,7 @@
             this.tvGrupuri.AllowDrop = true;
             this.tvGrupuri.LabelEdit = true;
             this.tvGrupuri.Location = new System.Drawing.Point(162, 640);
-            this.tvGrupuri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tvGrupuri.Margin = new System.Windows.Forms.Padding(4);
             this.tvGrupuri.Name = "tvGrupuri";
             this.tvGrupuri.Size = new System.Drawing.Size(807, 246);
             this.tvGrupuri.TabIndex = 4;
@@ -290,18 +290,20 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
-            this.numeDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
+            this.nume,
+            this.email,
             this.password,
-            this.cnpDataGridViewTextBoxColumn,
-            this.datanastereDataGridViewTextBoxColumn});
+            this.cnp,
+            this.dataNastere});
             this.dataGridView1.DataSource = this.utilizatoriBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1045, 674);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 72;
             this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(1087, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(1534, 212);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragDrop);
+            this.dataGridView1.DragOver += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragOver);
             // 
             // btnSalveaza
             // 
@@ -312,56 +314,6 @@
             this.btnSalveaza.Text = "salveaza";
             this.btnSalveaza.UseVisualStyleBackColor = true;
             this.btnSalveaza.Click += new System.EventHandler(this.btnSalveaza_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            this.idDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // numeDataGridViewTextBoxColumn
-            // 
-            this.numeDataGridViewTextBoxColumn.DataPropertyName = "nume";
-            this.numeDataGridViewTextBoxColumn.HeaderText = "nume";
-            this.numeDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.numeDataGridViewTextBoxColumn.Name = "numeDataGridViewTextBoxColumn";
-            this.numeDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "password";
-            this.password.HeaderText = "password";
-            this.password.MinimumWidth = 9;
-            this.password.Name = "password";
-            this.password.Width = 175;
-            // 
-            // cnpDataGridViewTextBoxColumn
-            // 
-            this.cnpDataGridViewTextBoxColumn.DataPropertyName = "cnp";
-            this.cnpDataGridViewTextBoxColumn.HeaderText = "cnp";
-            this.cnpDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.cnpDataGridViewTextBoxColumn.Name = "cnpDataGridViewTextBoxColumn";
-            this.cnpDataGridViewTextBoxColumn.Width = 175;
-            // 
-            // datanastereDataGridViewTextBoxColumn
-            // 
-            this.datanastereDataGridViewTextBoxColumn.DataPropertyName = "data_nastere";
-            this.datanastereDataGridViewTextBoxColumn.HeaderText = "data_nastere";
-            this.datanastereDataGridViewTextBoxColumn.MinimumWidth = 9;
-            this.datanastereDataGridViewTextBoxColumn.Name = "datanastereDataGridViewTextBoxColumn";
-            this.datanastereDataGridViewTextBoxColumn.Width = 175;
             // 
             // utilizatoriBindingSource
             // 
@@ -377,11 +329,61 @@
             // 
             this.utilizatoriTableAdapter.ClearBeforeFill = true;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 9;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            this.idDataGridViewTextBoxColumn.Width = 175;
+            // 
+            // nume
+            // 
+            this.nume.DataPropertyName = "nume";
+            this.nume.HeaderText = "nume";
+            this.nume.MinimumWidth = 9;
+            this.nume.Name = "nume";
+            this.nume.Width = 175;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "email";
+            this.email.MinimumWidth = 9;
+            this.email.Name = "email";
+            this.email.Width = 175;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "password";
+            this.password.MinimumWidth = 9;
+            this.password.Name = "password";
+            this.password.Width = 175;
+            // 
+            // cnp
+            // 
+            this.cnp.DataPropertyName = "cnp";
+            this.cnp.HeaderText = "cnp";
+            this.cnp.MinimumWidth = 9;
+            this.cnp.Name = "cnp";
+            this.cnp.Width = 175;
+            // 
+            // dataNastere
+            // 
+            this.dataNastere.DataPropertyName = "data_nastere";
+            this.dataNastere.HeaderText = "data_nastere";
+            this.dataNastere.MinimumWidth = 9;
+            this.dataNastere.Name = "dataNastere";
+            this.dataNastere.Width = 175;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2144, 1236);
+            this.ClientSize = new System.Drawing.Size(2825, 1229);
             this.Controls.Add(this.btnSalveaza);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tvGrupuri);
@@ -389,7 +391,7 @@
             this.Controls.Add(this.tbSelectedUtilizator);
             this.Controls.Add(this.lvUtilizatori);
             this.Controls.Add(this.meniulAplicatiei);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);
@@ -439,11 +441,11 @@
         private MyDBDataSetTableAdapters.UtilizatoriTableAdapter utilizatoriTableAdapter;
         private System.Windows.Forms.Button btnSalveaza;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nume;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cnpDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn datanastereDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cnp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataNastere;
     }
 }
 

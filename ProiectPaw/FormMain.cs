@@ -355,6 +355,7 @@ namespace ProiectPaw {
 
         }
 
+
         private void btnSalveaza_Click(object sender, EventArgs e) {
             try {
                 // Validate all controls on the form
@@ -386,5 +387,48 @@ namespace ProiectPaw {
             }
         }
 
+        private void dataGridView1_DragOver(object sender, DragEventArgs e) {
+            if (e.Data.GetDataPresent(typeof(Utilizator))) {
+                e.Effect = DragDropEffects.Copy;
+            }
+        }
+
+        private void dataGridView1_DragDrop(object sender, DragEventArgs e) {
+            if (e.Data.GetDataPresent(typeof(Utilizator))) {
+                Point dropPoint = dataGridView1.PointToClient(new Point(e.X, e.Y));
+
+                // get the row index of the row the mouse is over
+                int rowIndex = dataGridView1.HitTest(dropPoint.X, dropPoint.Y).RowIndex;
+
+                // if the mouse is not over a row, create a new row at the end
+                if (rowIndex == -1) {
+                    rowIndex = dataGridView1.Rows.Add();
+                }
+
+                // get the Utilizator object from the DragEventArgs
+                Utilizator utilizator = (Utilizator)e.Data.GetData(typeof(Utilizator));
+
+                // create a new row in the DataTable
+                var newRow = myDBDataSet.Utilizatori.NewRow();
+                newRow["Nume"] = utilizator.Nume;
+                newRow["CNP"] = utilizator.CNP;
+                newRow["Email"] = utilizator.Email;
+                newRow["Password"] = utilizator.Password;
+                newRow["data_nastere"] = utilizator.DataNastere;
+
+                // add the new row to the DataTable
+                myDBDataSet.Utilizatori.Rows.Add(newRow);
+
+                // add the new row to the DataGridView
+                dataGridView1.Rows[rowIndex].Cells["Nume"].Value = utilizator.Nume;
+                dataGridView1.Rows[rowIndex].Cells["CNP"].Value = utilizator.CNP;
+                dataGridView1.Rows[rowIndex].Cells["Email"].Value = utilizator.Email;
+                dataGridView1.Rows[rowIndex].Cells["Password"].Value = utilizator.Password;
+                dataGridView1.Rows[rowIndex].Cells["DataNastere"].Value = utilizator.DataNastere;
+
+                // set the Tag property of the row to the Utilizator object
+                dataGridView1.Rows[rowIndex].Tag = utilizator;
+            }
+        }
     }
 }
